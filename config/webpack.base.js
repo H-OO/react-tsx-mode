@@ -8,6 +8,7 @@
  * @const extractCSS 抽离css
  * @const extractSCSS 抽离scss
  * @const base 基础配置
+ * process.cwd() 获取node命令启动路径
  */
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');

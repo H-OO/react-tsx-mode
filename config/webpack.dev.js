@@ -5,6 +5,7 @@
  * @const merge 配置文件合并插件
  * @const base 基础配置
  * @const dev 开发环境配置
+ * process.cwd() 获取node命令启动路径
  */
 const path = require('path');
 const merge = require('webpack-merge');
