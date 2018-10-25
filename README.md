@@ -1,5 +1,3 @@
-## react-tsx-scripts 【 B 】
-
 ## **相关包**
 
 - commander 获取命令行传参
@@ -13,9 +11,6 @@
 - cross-spawn 解决跨平台使用npm命令的问题
 
 `npm i -S commander download-git-repo inquirer handlebars ora chalk log-symbols react-tsx-scripts cross-spawn`
-
-- colors 命令行带颜色输出
-- fs-extra fs基础上增加了一些新的方法
 
 ## **devDependencies 与 dependencies 的区别**
 
