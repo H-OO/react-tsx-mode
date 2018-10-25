@@ -1,6 +1,6 @@
 {
   "name": "try-react-tsx-scripts",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -42,6 +42,7 @@
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.9.3",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "postcss-safe-parser": "^4.0.1",
     "react": "^16.5.2",
@@ -58,12 +59,5 @@
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.9",
     "webpack-merge": "^4.1.4"
-  },
-  "devDependencies": {},
-  "browserslist": [
-    "iOS >= 7",
-    "Firefox >= 20",
-    "Android >= 4",
-    "IE >= 8"
-  ]
+  }
 }

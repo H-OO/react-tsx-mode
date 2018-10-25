@@ -5,13 +5,11 @@
  * @const merge 配置文件合并插件
  * @const base 基础配置
  * @const dev 开发环境配置
- * @const cmdPath 终端启动路径
  * process.cwd() 获取node命令启动路径
  */
 const path = require('path');
 const merge = require('webpack-merge');
 const base = require('./webpack.base.js');
-const cmdPath = process.cwd().replace(/\\/g, '/');
 const dev = {
   mode: 'development',
   devtool: 'inline-source-map',
@@ -20,8 +18,7 @@ const dev = {
     // port: '5000', // 端口，默认8080
     // open: true, // 自动开启浏览器 (shell --open)
     // openPage: 'index.html', // 默认打开页面
-    // contentBase: path.resolve(__dirname, '../dist'), // devServer访问该目录的文件
-    contentBase: cmdPath + '/dist', // devServer访问该目录的文件
+    contentBase: path.resolve(__dirname, '../../../dist'), // devServer访问该目录的文件
     progress: true, // 构建进度条 (shell --progress)
     // proxy: {
     //   '/api': {
