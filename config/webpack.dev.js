@@ -1,13 +1,15 @@
 'use strict';
 /**
  * 开发环境
- * @const path node内置模块
+ * @const fs 文件模块
+ * @const path 路径模块
  * @const merge 配置文件合并插件
  * @const base 基础配置
  * @const appDirectory 项目根目录地址
  * @const dev 开发环境配置
  * process.cwd() 获取node命令启动路径
  */
+const fs = require('fs');
 const path = require('path');
 const merge = require('webpack-merge');
 const base = require('./webpack.base.js');
