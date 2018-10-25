@@ -1,6 +1,6 @@
 {
   "name": "try-react-tsx-scripts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -58,5 +58,9 @@
   ],
   "bin": {
     "react-tsx-scripts": "./bin/react-tsx-scripts.js"
-  }
+  },
+  "files": [
+    "bin",
+    "config"
+  ]
 }
