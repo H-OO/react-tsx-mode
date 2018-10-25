@@ -1,5 +1,6 @@
 'use strict';
 /**
+ * @const fs 文件模块
  * @const path 路径模块
  * @const CleanWebpackPlugin 删除文件
  * @const HtmlWebpackPlugin 处理html文件
@@ -9,9 +10,11 @@
  * @const extractCSS 抽离css
  * @const extractSCSS 抽离scss
  * @const postcssLoaderPlugins postcss-loader引用相关插件
+ * @const appDirectory 项目根目录地址
  * @const base 基础配置
  * process.cwd() 获取node命令启动路径
  */
+const fs = require('fs');
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -33,13 +36,15 @@ const postcssLoaderPlugins = () => [
   })
 ];
 
+const appDirectory = fs.realpathSync(process.cwd());
+
 const base = {
   entry: {
-    index: path.resolve(__dirname, '../../../src/index.tsx')
+    index: path.resolve(appDirectory, 'src/index.tsx')
   },
   output: {
     filename: 'index.[hash:5].js',
-    path: path.resolve(__dirname, '../../../dist'),
+    path: path.resolve(appDirectory, 'dist'),
     chunkFilename: '[name].[chunkhash:5].js'
   },
   resolve: {
@@ -141,11 +146,11 @@ const base = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist'], {
-      root: path.resolve(__dirname, '../../../'), // 通过改变root范围越过保护机制
+      root: path.resolve(appDirectory, '/'), // 通过改变root范围越过保护机制
       verbose: true // (true 测试/模拟删除，不删除文件) (false 删除文件)
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../../../public/index.html')
+      template: path.resolve(appDirectory, 'public/index.html')
     }),
     new OptimizeCSSAssetsPlugin({
       assetNameRegExp: /\.css\.*(?!.*map)/g, // 注意不要写成 /\.css$/g

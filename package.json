@@ -1,7 +1,7 @@
 {
   "name": "try-react-tsx-scripts",
-  "version": "0.0.12",
-  "description": "",
+  "version": "0.0.13",
+  "description": "configuration files",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.dev.js",
