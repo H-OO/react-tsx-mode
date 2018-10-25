@@ -55,5 +55,8 @@
     "Firefox >= 20",
     "Android >= 4",
     "IE >= 8"
-  ]
+  ],
+  "bin": {
+    "react-tsx-scripts": "./bin/react-tsx-scripts.js"
+  }
 }
