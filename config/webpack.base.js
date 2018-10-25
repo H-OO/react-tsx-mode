@@ -7,6 +7,7 @@
  * @const OptimizeCSSAssetsPlugin 压缩css
  * @const extractCSS 抽离css
  * @const extractSCSS 抽离scss
+ * @const cmdPath 终端启动路径
  * @const base 基础配置
  * process.cwd() 获取node命令启动路径
  */
@@ -17,14 +18,17 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin'); // version@nex
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('[name].[hash:4].css');
 const extractSCSS = new ExtractTextPlugin('[name].[hash:6].css');
+const cmdPath = process.cwd().replace(/\\/g, '/');
 
 const base = {
   entry: {
-    index: path.resolve(__dirname, '../src/index.tsx')
+    // index: path.resolve(__dirname, '../src/index.tsx')
+    index: cmdPath + '/src/index.tsx'
   },
   output: {
     filename: 'index.[hash:5].js',
-    path: path.resolve(__dirname, '../dist'),
+    // path: path.resolve(__dirname, '../dist'),
+    path: cmdPath + '/dist',
     chunkFilename: '[name].[chunkhash:5].js'
   },
   resolve: {
@@ -97,11 +101,13 @@ const base = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist'], {
-      root: path.resolve(__dirname, '../'), // 通过改变root范围越过保护机制
+      // root: path.resolve(__dirname, '../'), // 通过改变root范围越过保护机制
+      root: cmdPath + '/', // 通过改变root范围越过保护机制
       verbose: true // (true 测试/模拟删除，不删除文件) (false 删除文件)
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../public/index.html')
+      // template: path.resolve(__dirname, '../public/index.html')
+      template: cmdPath + '/public/index.html'
     }),
     new OptimizeCSSAssetsPlugin({
       assetNameRegExp: /\.css\.*(?!.*map)/g, // 注意不要写成 /\.css$/g

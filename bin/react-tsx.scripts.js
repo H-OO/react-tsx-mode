@@ -25,6 +25,7 @@ switch (script) {
     const result = spawn.sync(
       moduleName,
       nodeArgs
+        .concat('--config')
         .concat(require.resolve('../config/' + configFileName))
         .concat(args.slice(scriptIndex + 1)),
       { stdio: 'inherit' }
