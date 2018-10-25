@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.pro.js"
   },
-  "author": "",
+  "author": "H-OO",
   "license": "ISC",
   "bin": {
     "react-tsx-mode": "./index.js"
@@ -15,8 +15,6 @@
   "files": [
     "config",
     ".babelrc",
-    "postcss.config.js",
-    "tsconfig.json",
     "tslint.json"
   ],
   "dependencies": {
