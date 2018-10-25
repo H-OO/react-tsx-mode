@@ -1,5 +1,5 @@
 {
-  "name": "react-tsx-config",
+  "name": "react-tsx-mode",
   "version": "0.0.1",
   "description": "configuration files",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "bin": {
-    "react-tsx-config": "./index.js"
+    "react-tsx-mode": "./index.js"
   },
   "files": [
     "config",
