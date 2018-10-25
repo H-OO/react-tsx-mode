@@ -1,6 +1,6 @@
 {
-  "name": "@hjyuan/react-tsx-scripts",
-  "version": "0.0.1",
+  "name": "try-react-tsx-scripts",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
