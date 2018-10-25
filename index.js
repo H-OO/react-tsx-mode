@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /** 
  * @const spawn 解决跨平台调用node问题
  * @const args isArr 获取终端命令参数 ['build']
@@ -21,12 +22,12 @@ switch (script) {
     // 模块名
     const moduleName = script === 'build' ? 'webpack' : 'webpack-dev-server';
     // 配置文件
-    const configFileName = 'webpack.' + script === 'build' ? 'pro' : 'dev';
+    const configFileName = 'webpack.' + (script === 'build' ? 'pro' : 'dev');
     const result = spawn.sync(
       moduleName,
       nodeArgs
         .concat('--config')
-        .concat(require.resolve('../config/' + configFileName))
+        .concat(require.resolve('./config/' + configFileName))
         .concat(args.slice(scriptIndex + 1)),
       { stdio: 'inherit' }
     );

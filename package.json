@@ -1,6 +1,6 @@
 {
   "name": "try-react-tsx-scripts",
-  "version": "0.0.3",
+  "version": "0.0.11",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,16 @@
   },
   "author": "",
   "license": "ISC",
+  "bin": {
+    "try-react-tsx-scripts": "./index.js"
+  },
+  "files": [
+    "config",
+    ".babelrc",
+    "postcss.config.js",
+    "tsconfig.json",
+    "tslint.json"
+  ],
   "dependencies": {
     "@babel/core": "^7.1.2",
     "@babel/polyfill": "^7.0.0",
@@ -55,12 +65,5 @@
     "Firefox >= 20",
     "Android >= 4",
     "IE >= 8"
-  ],
-  "bin": {
-    "react-tsx-scripts": "./bin/react-tsx-scripts.js"
-  },
-  "files": [
-    "bin",
-    "config"
   ]
 }
